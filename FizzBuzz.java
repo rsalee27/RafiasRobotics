@@ -22,15 +22,14 @@ public class FizzBuzz {
             System.out.println("Fizz");
         }    
     
-        else if(i%10==3 || i==31) 
+        else 
         {
-            System.out.println("Fizz"+i);
+            String a = String.valueOf(i);
+            System.out.println(a.replace("3", "Fizz"));
         }    
-        else
-        {
-            System.out.println(i);
-        }
+        
     }    
 }
 }
+       
             
