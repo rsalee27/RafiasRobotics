@@ -1,69 +1,50 @@
-import java.util.Random; 
-import java.util.Scanner; 
-  
+import java.util.Scanner;
 
 public class ComputerGuessing{
 
-	public static void main(String[] args)
-    {
+	public static void main(String[] args){
 
-		 // stores actual and guess number 
-         int answer; 
-         int guess;
-  
-         // maximum value is 100 
-        int maxv = 100; 
-        int minv = 1;
- 
-       // takes input using scanner 
-       Scanner in = new Scanner(System.in); 
+		System.out.println("Think of a whole number betwen 1 and 100. I'll guess what it is!");
+		System.out.println("When you're ready, type yes and press enter.");
 
-       // Random instance 
-       Random rand = new Random(); 
-       
-      // correct answer = computer guess
-       guess = rand.nextInt(maxv) + 1; 
+		Scanner scanner = new Scanner(System.in);
+		//ignore the yes
+		scanner.nextLine();
 
-       System.out.println("Computer guess is: " + guess);
+		int min = 1;
+		int max = 100;
 
-       boolean correct = false; 
+		int guesses = 0;
+		boolean done = false;
+		while(!done){
 
-       // loop until the guess is correct 
-       while (!correct) { 
-         
-         // Set the average of min and max as guess
-          answer = (minv + maxv) / 2;
+			int guess = min + (int)(Math.random() * (max - min + 1));
+			guesses++;
 
-           System.out.println( 
-               "Enter the current average as answer "+ answer); 
-           answer = in.nextInt();
-         
-           // if guess is greater than actual 
-           if (guess > answer) { 
-               System.out.println("Too low, try again"); 
-               minv = answer;
-           } 
- 
-           // if guess is less than actual 
-           else if (guess < answer) { 
-               System.out.println("Too high, try again"); 
-               maxv = answer;
-           } 
- 
-           // guess is equal to actual value 
-           else { 
- 
-               System.out.println( 
-                   "Yes, you guessed the number."); 
- 
-               correct = true; 
-           } 
-       } 
-       System.exit(0); 
-    }
+			System.out.println("My guess is: " + guess);
+			System.out.println("Please type yes if I got it right.");
+			System.out.println("Please type higher if your number is greater than " + guess + ".");
+			System.out.println("Please type lower if your number is less than " + guess + ".");
+			System.out.println("Then press enter.");
+
+			String answer = scanner.nextLine();
+
+			if(answer.equals("lower")){
+				max = guess - 1;
+			}
+			else if(answer.equals("higher")){
+				min = guess + 1;
+			}
+			else{
+				System.out.println("Hooray!");
+				System.out.println("It took me " + guesses + " guesses to get it right. Thanks for playing!");
+				done = true;
+			}
+		}
+		scanner.close();
+	}
 }
 
-   
         
     
 
