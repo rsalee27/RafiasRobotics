@@ -1,51 +1,31 @@
 import java.util.Scanner;
 
-public class ComputerGuessing{
+public class ComputerGuessing {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int low = 1;
+        int high = 100;
+        int guesses = 0;
 
-	public static void main(String[] args){
+        System.out.println("Think of a number between " + low + " and " + high + ".");
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            System.out.println("Is your number " + mid + "? Enter 'higher', 'lower', or 'yes'.");
+            String response = scanner.nextLine().toLowerCase();
 
-		System.out.println("Think of a whole number betwen 1 and 100. I'll guess what it is!");
-		System.out.println("When you're ready, type yes and press enter.");
-
-		Scanner scanner = new Scanner(System.in);
-		//ignore the yes
-		scanner.nextLine();
-
-		int min = 1;
-		int max = 100;
-
-		int guesses = 0;
-		boolean done = false;
-		while(!done){
-
-			int guess = min + (int)(Math.random() * (max - min + 1));
-			guesses++;
-
-			System.out.println("My guess is: " + guess);
-			System.out.println("Please type yes if I got it right.");
-			System.out.println("Please type higher if your number is greater than " + guess + ".");
-			System.out.println("Please type lower if your number is less than " + guess + ".");
-			System.out.println("Then press enter.");
-
-			String answer = scanner.nextLine();
-
-			if(answer.equals("lower")){
-				max = guess - 1;
-			}
-			else if(answer.equals("higher")){
-				min = guess + 1;
-			}
-			else{
-				System.out.println("Hooray!");
-				System.out.println("It took me " + guesses + " guesses to get it right. Thanks for playing!");
-				done = true;
-			}
-		}
-		scanner.close();
-	}
+            if (response.equals("higher")) {
+                low = mid + 1;
+            } else if (response.equals("lower")) {
+                high = mid - 1;
+            } else if (response.equals("yes")) {
+                System.out.println("Great! I guessed your number in " + guesses + " guesses.");
+                break;
+            } else {
+                System.out.println("Sorry, I didn't understand that. Please enter 'higher', 'lower', or 'yes'.");
+            }
+            guesses++;
+        }
+        scanner.close();
+    }
 }
-
-        
-    
-
 			
