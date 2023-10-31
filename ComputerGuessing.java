@@ -12,6 +12,7 @@ public class ComputerGuessing {
             int mid = low + (high - low) / 2;
             System.out.println("Is your number " + mid + "? Enter 'higher', 'lower', or 'yes'.");
             String response = scanner.nextLine().toLowerCase();
+            guesses++;
 
             if (response.equals("higher")) {
                 low = mid + 1;
@@ -23,9 +24,8 @@ public class ComputerGuessing {
             } else {
                 System.out.println("Sorry, I didn't understand that. Please enter 'higher', 'lower', or 'yes'.");
             }
-            guesses++;
+            
         }
         scanner.close();
     }
 }
-			
