@@ -54,43 +54,40 @@ class PetNursery {
         }
     }
 
-
-
     public static void main(String[] args) {
         PetNursery nursery = new PetNursery();
 
-        System.out.println("Puppies:");
-        System.out.println("Max, Age: 1, Breed: Labrador");
-        System.out.println("Milo, Age: 2, Breed: Boston Terrier");
-        System.out.println("Lily, Age: 7, Breed: Siberian Husky");
-        System.out.println("Carl, Age: 2, Breed: Beagle");
-        System.out.println("Sprinkles, Age: 4, Breed: Poodle");
-        System.out.println("Troy, Age: 5, Breed: Boston Terrier");
-        System.out.println("Polly, Age: 6, Breed: Golden Retriever");
-        System.out.println("Eric, Age: 3, Breed: Chihuahua");
-        System.out.println("Teresa, Age: 8, Breed: Labrador");
-        System.out.println("Will, Age: 2, Breed: Siberian Husky");
-        System.out.println("Robert, Age: 6, Breed: Labradoodle");
-        System.out.println(" ");
+        // Add puppies
+        nursery.addPet(new Puppy("Max", 1, "Labrador"));
+        nursery.addPet(new Puppy("Milo", 2, "Boston Terrier"));
+        // Add more puppies...
+        nursery.addPet(new Puppy("Lily", 7, "Siberian Husky"));
+        nursery.addPet(new Puppy("Carl", 2, "Beagle"));
+        nursery.addPet(new Puppy("Sprinkles", 4, "Poodle"));
+        nursery.addPet(new Puppy("Jessica", 3, "Golden Retriever"));
+        nursery.addPet(new Puppy("Marc", 1, "Siberian Husky"));
+        nursery.addPet(new Puppy("Marshmallow", 4, "Poodle"));
+        nursery.addPet(new Puppy("Tulip", 5, "German Sheperd"));
+        nursery.addPet(new Puppy("Yori", 2, "Beagle"));
+        nursery.addPet(new Puppy("Phoebe", 6, "Yorkshire Terrier"));
+        nursery.addPet(new Puppy("Terri", 1, "Labrador"));
 
-        System.out.println("Kittens:");
-        System.out.println("Whiskers, Age:2, Color: Cream");
-        System.out.println("Sky, Age:3, Color: Fawn");
-        System.out.println("Alvin, Age:3, Color: Cinnamon");
-        System.out.println("Willow, Age:4, Color: Cream");
-        System.out.println("Bamboo, Age:5, Color: Chocolate");
-        System.out.println("Flora, Age:4, Color: Lilac");
-        System.out.println("Gemma, Age:1, Color: Albino");
-        System.out.println("Rossa, Age:7, Color: Tabby");
-        System.out.println("Caramel, Age:6, Color: Cinnamon");
-        System.out.println("Margot, Age:7, Color: Smoke");
-        System.out.println("Joy, Age:1, Color: Chinchilla");
-        System.out.println("Tulip, Age:3, Color: Albino");
-        System.out.println("Seaweed, Age:8, Color: Blue");
-        System.out.println("Marshmallow, Age:6, Color: Smoke");
-        
-        new PetNursery();
-        
+        // Add kittens
+        nursery.addPet(new Kitten("Whiskers", 2, "Cream"));
+        nursery.addPet(new Kitten("Sky", 3, "Fawn"));
+        // Add more kittens...
+        nursery.addPet(new Kitten("Alvin", 3, "Cinnamon"));
+        nursery.addPet(new Kitten("Willow", 4, "Cream"));
+        nursery.addPet(new Kitten("Bamboo", 5, "Chocolate"));
+        nursery.addPet(new Kitten("Twinkles", 2, "Cream"));
+        nursery.addPet(new Kitten("Luna", 4, "Calico"));
+        nursery.addPet(new Kitten("Gemma", 1, "Tabby"));
+        nursery.addPet(new Kitten("Dandelion", 6, "Fawn"));
+        nursery.addPet(new Kitten("Iris", 4, "Albino"));
+        nursery.addPet(new Kitten("Saturn", 7, "Blue"));
+        nursery.addPet(new Kitten("Venus", 3, "Lilac"));
+        nursery.addPet(new Kitten("Sydney", 7, "Cream"));
+
         nursery.printAllPetsInfo();
     }
 }
