@@ -60,7 +60,6 @@ class PetNursery {
         // Add puppies
         nursery.addPet(new Puppy("Max", 1, "Labrador"));
         nursery.addPet(new Puppy("Milo", 2, "Boston Terrier"));
-        // Add more puppies...
         nursery.addPet(new Puppy("Lily", 7, "Siberian Husky"));
         nursery.addPet(new Puppy("Carl", 2, "Beagle"));
         nursery.addPet(new Puppy("Sprinkles", 4, "Poodle"));
@@ -75,7 +74,6 @@ class PetNursery {
         // Add kittens
         nursery.addPet(new Kitten("Whiskers", 2, "Cream"));
         nursery.addPet(new Kitten("Sky", 3, "Fawn"));
-        // Add more kittens...
         nursery.addPet(new Kitten("Alvin", 3, "Cinnamon"));
         nursery.addPet(new Kitten("Willow", 4, "Cream"));
         nursery.addPet(new Kitten("Bamboo", 5, "Chocolate"));
