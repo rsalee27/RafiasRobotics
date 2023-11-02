@@ -12,7 +12,11 @@ public class MakeChange {
                 break;
             }
             paid += Double.parseDouble(input);
+
         }
+
+        // Print the total cost of the items
+        System.out.println("The total cost of the items is: " + String.format("%.2f", paid));
 
         System.out.println("Enter the amount of cash given:");
         double cost = Double.parseDouble(scanner.nextLine());
@@ -48,20 +52,38 @@ public class MakeChange {
 
             pennies = (int)(change / 0.01);
 
-            System.out.println("Change in 100s: " + hundreds);
-            System.out.println("Change in 20s: " + twenties);
-            System.out.println("Change in 10s: " + tens);
-            System.out.println("Change in 5s: " + fives);
-            System.out.println("Change in 1s: " + ones);
-            System.out.println("Change in Quarters: " + quarters);
-            System.out.println("Change in Dimes: " + dimes);
-            System.out.println("Change in Nickels: " + nickels);
-            System.out.println("Change in Pennies: " + pennies);
+             if (hundreds > 0) {
+                System.out.println("Change in 100s: " + hundreds);
+            }
+             if (twenties > 0) {
+                System.out.println("Change in 20s: " + twenties);
+            }
+            if (tens > 0) {
+                System.out.println("Change in 10s: " + tens);
+            }
+            if (fives> 0) {
+                System.out.println("Change in 5s: " + fives);
+            }
+            if (ones > 0) {
+                System.out.println("Change in 1s: " + ones);
+            }
+            if (quarters > 0) {
+                System.out.println("Change in Quarters: " + quarters);
+            }
+            if (dimes > 0) {
+                System.out.println("Change in Dimes: " + dimes);
+            }
+            if (nickels > 0) {
+                System.out.println("Change in Nickels: " + nickels);
+            }
+            if (pennies > 0) {
+                System.out.println("Change in Pennies: " + pennies);
+            }
 
        } else if(cost == paid) {
            System.out.println("No Change is due");
        } else {
-           System.out.println("Please pay more...");
+           System.out.println("Please pay more... You still owe: " + String.format("%.2f", paid - cost));
+       }
        }
     }
-}
